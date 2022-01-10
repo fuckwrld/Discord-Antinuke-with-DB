@@ -1,5 +1,5 @@
 # Pymongo Database Antinuke
 
-## discord antinuke using [pymongo](https://www.mongodb.com/)
+## Discord Antinuke using [MongoDB](https://www.mongodb.com/)
 
-### developed by Loopy#0001
+### Developed by Loopy#0001
