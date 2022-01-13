@@ -20,7 +20,8 @@ loopy.add_cog(AntiRole(loopy, db))
 loopy.add_cog(AntiGuild(loopy, db))
 
 def is_server_owner(ctx):
-    return ctx.message.author.id == ctx.guild.owner.id or ctx.message.author.id == 599528513372028950 or ctx.message.author.id == 696043986917523556
+    return ctx.message.author.id == ctx.guild.owner.id
+
 def is_whitelisted(ctx):
     return ctx.message.author.id in db.find_one({ "guild_id": ctx.guild.id })["whitelisted"] or ctx.guild.owner.id 
 
