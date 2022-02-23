@@ -12,7 +12,7 @@ class AntiRemoval(commands.Cog):
     @commands.Cog.listener()
     async def on_member_ban(self, guild, member):
       whitelistedUsers = self.db.find_one({ "guild_id": member.guild.id })["whitelisted"]
-      async for i in guild.audit_logs(limit=1, after=datetime.datetime.now() -datetime.timedelta(minutes = 2), action=discord.AuditLogAction.ban):
+      async for i in guild.audit_logs(limit=1, after=datetime.datetime.now()-datetime.timedelta(minutes = 2), action=discord.AuditLogAction.ban):
         if i.user.id in whitelistedUsers or i.user in whitelistedUsers:
           return
       await i.user.ban()

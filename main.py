@@ -63,7 +63,7 @@ async def whitelist(ctx, user: discord.User=None):
 @whitelist.error
 async def whitelist_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
-        em = discord.Embed(description = "Only the Server Owner or Trusted User can whitelist", color = error)
+        em = discord.Embed(description = "Only the Server Owner can whitelist", color = error)
         await ctx.send(embed=em)
 
 @loopy.command(aliases=["uwl"])
@@ -83,7 +83,7 @@ async def unwhitelist(ctx, user: discord.User=None):
 @unwhitelist.error
 async def unwhitelist_error(ctx, error):
     if isinstance(error, commands.CheckFailure):
-        em = discord.Embed(description = f"Only the Server Owner or Trusted User can unwhitelist",color = error)
+        em = discord.Embed(description = f"Only the Server Owner can unwhitelist",color = error)
         await ctx.send(embed = em)
 
 @loopy.command(aliases=["wld"])
