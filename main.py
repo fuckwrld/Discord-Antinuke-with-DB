@@ -23,7 +23,7 @@ def is_server_owner(ctx):
     return ctx.message.author.id == ctx.guild.owner.id
 
 def is_whitelisted(ctx):
-    return ctx.message.author.id in db.find_one({ "guild_id": ctx.guild.id })["whitelisted"] or ctx.guild.owner.id 
+    return ctx.message.author.id in db.find_one({ "guild_id": ctx.guild.id })["whitelisted"] or ctx.message.author.id == ctx.guild.owner.id 
 
 class anti:
   def newserver(owner_id, server_id):
